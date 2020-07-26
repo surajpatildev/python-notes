@@ -1,0 +1,35 @@
+# pyinstaller
+
+Pyinstaller Notes - 
+To create exe use following code in cmd in location where .py is 
+pyinstaller --onefile PythonApplication1.py
+
+
+if you don't want cmd window to open use -
+
+pyinstaller --onefile --icon=app.ico PythonApplication1.py
+
+with version
+
+pyinstaller --onefile --icon=app.ico --version-file=version.txt app.py
+
+If you want your application without command window use (-w) : 
+C:\Users\suraj.patil\Desktop\Python\IDEs\pyinstaller-develop\pyinstaller-develop\pyinstaller.py --onefile arena_app.py -w
+
+Issues 
+1. To create Exe Using Pyinstaller for PyQt or matplotlib
+The current pyinstaller will give error. follow
+https://github.com/pyinstaller/pyinstaller/pull/3233
+Where you need to download dev version of the pyinstaller and then you can go ahed and run exe
+Download 3.5 dev pyinstaller from below link - 
+https://github.com/pyinstaller/pyinstaller/archive/develop.zip
+
+Once you download extract it, and while creating exe, use full path of this pyinstaller py file instead of just pyinstaller
+e.g. C:\Users\suraj.patil\Desktop\Python\IDEs\pyinstaller-develop\pyinstaller-develop\pyinstaller.py 
+	--onefile arena_app.py
+
+2. Using Pyinstaller in Venv
+Refer to this issue if you face any problems using pyinstaller on venv -
+https://github.com/Loran425/pyinstaller/commit/14b6e65642e4b07a4358bab278019a48dedf7460
+
+3. If pyinstaller keeps raising the issues then built an VENV and then repeat all process again in clean venv.
